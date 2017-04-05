@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0a5f2cb-8efa-4c41-8df6-e2bf27114525" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/Ingredients.html" afterPath="$PROJECT_DIR$/HTML/Ingredients.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/index.html" afterPath="$PROJECT_DIR$/HTML/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/Ingredient.js" afterPath="$PROJECT_DIR$/JS/Ingredient.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/Recipe.js" afterPath="$PROJECT_DIR$/JS/Recipe.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/RecipeCalculator.js" afterPath="$PROJECT_DIR$/JS/RecipeCalculator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,11 +19,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.6016451">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/HTML/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="56" column="12" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="20" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
                   <folding />
                 </state>
               </provider>
@@ -43,11 +39,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RecipeCalculator.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="RecipeCalculator.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/JS/RecipeCalculator.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+                <state relative-caret-position="323">
+                  <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
                   <folding>
                     <element signature="n#!!doc;n#displayRecipes#0" expanded="false" />
                   </folding>
@@ -130,8 +126,8 @@
         <option value="$PROJECT_DIR$/HTML/Ingredients.html" />
         <option value="$PROJECT_DIR$/JS/Recipe.js" />
         <option value="$PROJECT_DIR$/JS/Ingredient.js" />
-        <option value="$PROJECT_DIR$/JS/RecipeCalculator.js" />
         <option value="$PROJECT_DIR$/HTML/index.html" />
+        <option value="$PROJECT_DIR$/JS/RecipeCalculator.js" />
       </list>
     </option>
   </component>
@@ -330,12 +326,12 @@
       <option name="presentableId" value="Default" />
       <updated>1491355397128</updated>
       <workItem from="1491355398984" duration="5601000" />
-      <workItem from="1491397708051" duration="6665000" />
+      <workItem from="1491397708051" duration="6865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12266000" />
+    <option name="totallyTimeSpent" value="12466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -438,14 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Ingredients.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="41" column="150" lean-forward="false" selection-start-line="41" selection-start-column="150" selection-end-line="41" selection-end-column="150" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS/Ingredient.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -466,21 +454,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/RecipeCalculator.js">
+    <entry file="file://$PROJECT_DIR$/HTML/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!doc;n#displayRecipes#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/index.html">
+    <entry file="file://$PROJECT_DIR$/HTML/Ingredients.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="56" column="12" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="20" />
+        <state relative-caret-position="134">
+          <caret line="41" column="150" lean-forward="false" selection-start-line="41" selection-start-column="150" selection-end-line="41" selection-end-column="150" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/RecipeCalculator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc;n#displayRecipes#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

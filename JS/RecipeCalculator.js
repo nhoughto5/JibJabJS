@@ -17,11 +17,11 @@ function displayRecipes(){
         var label = document.createElement('h3');
         label.innerHTML = "Cost of Recipe: " + recipes[i].Name;
         var tax = document.createElement('p');
-        tax.innerHTML = "Tax: " + recipes[i].getSalesTax();
+        tax.innerHTML = "<b>Tax</b>: " + recipes[i].getSalesTax();
         var d = document.createElement('p');
-        d.innerHTML = "Discount: " + recipes[i].getDiscount();
+        d.innerHTML = "<b>Discount</b>: " + recipes[i].getDiscount();
         var total = document.createElement('p');
-        total.innerHTML = "Tax: " + recipes[i].getTotalCost();
+        total.innerHTML = "<b>Total</b>: " + recipes[i].getTotalCost();
 
         thisRecipeArea.appendChild(label);
         thisRecipeArea.appendChild(tax);
