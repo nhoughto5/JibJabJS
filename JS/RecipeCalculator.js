@@ -3,8 +3,8 @@
  */
 
 
-function addTable() {
-    var myTableDiv = document.getElementById("Ingredients_Table");
+function addIngredientTable() {
+    var myTableDiv = document.getElementById("ingredientsTable");
     var table = document.createElement('TABLE');
     var tableBody = document.createElement('TBODY');
 
@@ -12,26 +12,21 @@ function addTable() {
     table.appendChild(tableBody);
 
     var heading = [];
-    heading[0] = "Request Type";
-    heading[1] = "Group A";
-    heading[2] = "Groub B";
-    heading[3] = "Group C";
-    heading[4] = "Total";
+    heading[0] = "Name";
+    heading[1] = "Type";
+    heading[2] = "Quantity";
+    heading[3] = "Organic?";
+    heading[4] = "Unit of Measurement";
+    heading[5] = "Cost";
 
-    var stock;
-    stock = [];
-    stock[0] = ["Cars", "88.625", "85.50", "85.81", "987"];
-    stock[1] = ["Veggies", "88.625", "85.50", "85.81", "988"];
-    stock[2] = ["Colors", "88.625", "85.50", "85.81", "989"];
-    stock[3] = ["Numbers", "88.625", "85.50", "85.81", "990"];
-    stock[4] = ["Requests", "88.625", "85.50", "85.81", "991"];
+    var stock = getIngredients();
 
     //TABLE COLUMNS
     var tr1 = document.createElement('TR');
     tableBody.appendChild(tr1);
     for (i = 0; i < heading.length; i++) {
         var th = document.createElement('TH');
-        th.width = '75';
+        th.width = '85';
         th.appendChild(document.createTextNode(heading[i]));
         tr1.appendChild(th);
     }
@@ -39,11 +34,35 @@ function addTable() {
     //TABLE ROWS
     for (var i = 0; i < stock.length; i++) {
         var tr = document.createElement('TR');
-        for (var j = 0; j < stock[i].length; j++) {
-            var td = document.createElement('TD');
-            td.appendChild(document.createTextNode(stock[i][j]));
-            tr.appendChild(td)
-        }
+        var tdName = document.createElement('TD');
+        tdName.innerHTML = stock[i].Name;
+        tr.appendChild(tdName);
+
+        var tdType = document.createElement('TD');
+
+        tdType.innerHTML = getTypeName(stock[i].IngredientType);
+        tr.appendChild(tdType);
+
+        var tdQuan = document.createElement('TD');
+        tdQuan.innerHTML = stock[i].Quantity;
+        tr.appendChild(tdQuan);
+
+        var tdOrganic = document.createElement('TD');
+        tdOrganic.innerHTML = stock[i].Organic ? 'Organic' : 'Non-Organic';
+        tr.appendChild(tdOrganic);
+
+        var tdUM = document.createElement('TD');
+        tdUM.innerHTML = stock[i].unitOfMeasure;
+        tr.appendChild(tdUM);
+
+        var tdCost = document.createElement('TD');
+        tdCost.innerHTML = '$' + stock[i].Cost;
+        tr.appendChild(tdCost);
+        // for (var j = 0; j < stock[i].length; j++) {
+        //     var td = document.createElement('TD');
+        //     td.appendChild(document.createTextNode(stock[i][j]));
+        //     tr.appendChild(td)
+        // }
         tableBody.appendChild(tr);
     }
     myTableDiv.appendChild(table)
@@ -83,20 +102,20 @@ function testRecipes(){
 function getIngredients(){
     var ingredients = [];
     //Produce
-    ingredients.push_back(new Ingredient("Garlic", IngredientTypes.Produce, 1, true, "clove", 0.67));
-    ingredients.push_back(new Ingredient("Lemon", IngredientTypes.Produce,  1, false, "", 2.03));
-    ingredients.push_back(new Ingredient("Corn", IngredientTypes.Produce, 4, false, "cup", 0.87));
+    ingredients.push(new Ingredient("Garlic", IngredientTypes.Produce, 1, true, "clove", 0.67));
+    ingredients.push(new Ingredient("Lemon", IngredientTypes.Produce,  1, false, "", 2.03));
+    ingredients.push(new Ingredient("Corn", IngredientTypes.Produce, 4, false, "cup", 0.87));
 
     // Meat/Poultry
-    ingredients.push_back(new Ingredient("Chicken Breast", IngredientTypes.Meat, 4, false,  "", 2.19));
-    ingredients.push_back(new Ingredient("Bacon", IngredientTypes.Meat, 4, false, "slices", 0.24));
+    ingredients.push(new Ingredient("Chicken Breast", IngredientTypes.Meat, 4, false,  "", 2.19));
+    ingredients.push(new Ingredient("Bacon", IngredientTypes.Meat, 4, false, "slices", 0.24));
 
-    // Pantryingredients
-    ingredients.push_back(new Ingredient("Pasta", IngredientTypes.Pantry, 8, false, "ounce", 0.31));
-    ingredients.push_back(new Ingredient("Olive Oil", IngredientTypes.Pantry, 0.3333, true, "cup", 1.92));
-    ingredients.push_back(new Ingredient("Vinegar", IngredientTypes.Pantry, 0.5, false,  "cup", 1.26));
-    ingredients.push_back(new Ingredient("Salt", IngredientTypes.Pantry, 1.25, false, "teaspoon", 0.16));
-    ingredients.push_back(new Ingredient("pepper", IngredientTypes.Pantry, 0.75, false, "teaspoon", 0.17));
+    // Pantryingredi
+    ingredients.push(new Ingredient("Pasta", IngredientTypes.Pantry, 8, false, "ounce", 0.31));
+    ingredients.push(new Ingredient("Olive Oil", IngredientTypes.Pantry, 0.3333, true, "cup", 1.92));
+    ingredients.push(new Ingredient("Vinegar", IngredientTypes.Pantry, 0.5, false,  "cup", 1.26));
+    ingredients.push(new Ingredient("Salt", IngredientTypes.Pantry, 1.25, false, "teaspoon", 0.16));
+    ingredients.push(new Ingredient("pepper", IngredientTypes.Pantry, 0.75, false, "teaspoon", 0.17));
 
     return ingredients
 }
