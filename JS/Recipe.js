@@ -19,7 +19,7 @@ function Recipe(name){
             var ingredient = this.Ingredients[ing];
             total += ingredient.Organic ? ingredient.getValue() * WELLNESS_DISCOUNT : 0;
         }
-        roundUpUtil(total, 0.01);
+        return roundUpUtil(total, 0.01);
     };
     this.getSalesTax = function(){
         var total = 0;

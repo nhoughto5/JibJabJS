@@ -61,7 +61,47 @@ function testUtil(){
     console.log("Output: " + r2);
 }
 
-function getRecipe(){
+function testRecipes(){
+    var recipes = getRecipes();
+
+    console.log("Now Testing: " + recipes[0].Name);
+    console.log("Tax: " + recipes[0].getSalesTax());
+    console.log("Discount: " + recipes[0].getDiscount());
+    console.log("Total: " + recipes[0].getTotalCost());
+
+    console.log("\nNow Testing: " + recipes[1].Name);
+    console.log("Tax: " + recipes[1].getSalesTax());
+    console.log("Discount: " + recipes[1].getDiscount());
+    console.log("Total: " + recipes[1].getTotalCost());
+
+    console.log("\nNow Testing: " + recipes[2].Name);
+    console.log("Tax: " + recipes[2].getSalesTax());
+    console.log("Discount: " + recipes[2].getDiscount());
+    console.log("Total: " + recipes[2].getTotalCost());
+}
+
+function getIngredients(){
+    var ingredients = [];
+    //Produce
+    ingredients.push_back(new Ingredient("Garlic", IngredientTypes.Produce, 1, true, "clove", 0.67));
+    ingredients.push_back(new Ingredient("Lemon", IngredientTypes.Produce,  1, false, "", 2.03));
+    ingredients.push_back(new Ingredient("Corn", IngredientTypes.Produce, 4, false, "cup", 0.87));
+
+    // Meat/Poultry
+    ingredients.push_back(new Ingredient("Chicken Breast", IngredientTypes.Meat, 4, false,  "", 2.19));
+    ingredients.push_back(new Ingredient("Bacon", IngredientTypes.Meat, 4, false, "slices", 0.24));
+
+    // Pantryingredients
+    ingredients.push_back(new Ingredient("Pasta", IngredientTypes.Pantry, 8, false, "ounce", 0.31));
+    ingredients.push_back(new Ingredient("Olive Oil", IngredientTypes.Pantry, 0.3333, true, "cup", 1.92));
+    ingredients.push_back(new Ingredient("Vinegar", IngredientTypes.Pantry, 0.5, false,  "cup", 1.26));
+    ingredients.push_back(new Ingredient("Salt", IngredientTypes.Pantry, 1.25, false, "teaspoon", 0.16));
+    ingredients.push_back(new Ingredient("pepper", IngredientTypes.Pantry, 0.75, false, "teaspoon", 0.17));
+
+    return ingredients
+}
+
+function getRecipes(){
     var recipes = []
     var r1 = new Recipe("R1");
     r1.addIngredient(new Ingredient("Garlic", IngredientTypes.Produce, 1, true, "clove", 0.67));
