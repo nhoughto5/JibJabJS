@@ -15,16 +15,36 @@ function Ingredient(name, type, quantity, organic, um, cost){
 
     this.toString = function(){
         var o = this.Organic ? 'Organic ' : 'Non Organic ';
-        var t;
-        if(this.IngredientType === 0){
-            t = 'Produce';
-        }
-        else if(this.IngredientType == 1){
-            t = 'Meat';
-        }
-        else{
-            t = 'Pantry';
-        }
-        return t + ": " + o + this.Name + ", have " +  this.Quantity + " " + this.unitOfMeasure + " at $" + this.Cost;
+        return getTypeName(this.IngredientType) + ": " + o + this.Name + ", have " +  this.Quantity + " " + this.unitOfMeasure + " at $" + this.Cost;
+    }
+
+    this.getIngredientTR = function(){
+        var tr = document.createElement('TR');
+        var tdName = document.createElement('TD');
+        tdName.innerHTML = this.Name;
+        tr.appendChild(tdName);
+
+        var tdType = document.createElement('TD');
+
+        tdType.innerHTML = getTypeName(this.IngredientType);
+        tr.appendChild(tdType);
+
+        var tdQuan = document.createElement('TD');
+        tdQuan.innerHTML = this.Quantity;
+        tr.appendChild(tdQuan);
+
+        var tdOrganic = document.createElement('TD');
+        tdOrganic.innerHTML = this.Organic ? 'Organic' : 'Non-Organic';
+        tr.appendChild(tdOrganic);
+
+        var tdUM = document.createElement('TD');
+        tdUM.innerHTML = this.unitOfMeasure;
+        tr.appendChild(tdUM);
+
+        var tdCost = document.createElement('TD');
+        tdCost.innerHTML = '$' + this.Cost;
+        tr.appendChild(tdCost);
+
+        return tr;
     }
 }

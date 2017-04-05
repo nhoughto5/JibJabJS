@@ -3,6 +3,36 @@
  */
 
 
+function displayRecipes(){
+    var recipesDiv = document.getElementById("recipesDisplay");
+    var recipes = getRecipes();
+    for(var i = 0; i < recipes.length; ++i){
+        var thisRecipeArea = document.createElement('div');
+        var head = document.createElement('h2');
+        head.innerHTML = 'Recipe: ' + recipes[i].Name;
+        thisRecipeArea.appendChild(head);
+        thisRecipeArea.appendChild(recipes[i].getRecipeTable());
+
+        //Cost display section
+        var label = document.createElement('h3');
+        label.innerHTML = "Cost of Recipe: " + recipes[i].Name;
+        var tax = document.createElement('p');
+        tax.innerHTML = "Tax: " + recipes[i].getSalesTax();
+        var d = document.createElement('p');
+        d.innerHTML = "Discount: " + recipes[i].getDiscount();
+        var total = document.createElement('p');
+        total.innerHTML = "Tax: " + recipes[i].getTotalCost();
+
+        thisRecipeArea.appendChild(label);
+        thisRecipeArea.appendChild(tax);
+        thisRecipeArea.appendChild(d);
+        thisRecipeArea.appendChild(total);
+
+        thisRecipeArea.appendChild(document.createElement('hr'));
+        recipesDiv.appendChild(thisRecipeArea);
+    }
+}
+
 function addIngredientTable() {
     var myTableDiv = document.getElementById("ingredientsTable");
     var table = document.createElement('TABLE');
@@ -33,37 +63,8 @@ function addIngredientTable() {
 
     //TABLE ROWS
     for (var i = 0; i < stock.length; i++) {
-        var tr = document.createElement('TR');
-        var tdName = document.createElement('TD');
-        tdName.innerHTML = stock[i].Name;
-        tr.appendChild(tdName);
 
-        var tdType = document.createElement('TD');
-
-        tdType.innerHTML = getTypeName(stock[i].IngredientType);
-        tr.appendChild(tdType);
-
-        var tdQuan = document.createElement('TD');
-        tdQuan.innerHTML = stock[i].Quantity;
-        tr.appendChild(tdQuan);
-
-        var tdOrganic = document.createElement('TD');
-        tdOrganic.innerHTML = stock[i].Organic ? 'Organic' : 'Non-Organic';
-        tr.appendChild(tdOrganic);
-
-        var tdUM = document.createElement('TD');
-        tdUM.innerHTML = stock[i].unitOfMeasure;
-        tr.appendChild(tdUM);
-
-        var tdCost = document.createElement('TD');
-        tdCost.innerHTML = '$' + stock[i].Cost;
-        tr.appendChild(tdCost);
-        // for (var j = 0; j < stock[i].length; j++) {
-        //     var td = document.createElement('TD');
-        //     td.appendChild(document.createTextNode(stock[i][j]));
-        //     tr.appendChild(td)
-        // }
-        tableBody.appendChild(tr);
+        tableBody.appendChild(stock[i].getIngredientTR());
     }
     myTableDiv.appendChild(table)
 }

@@ -54,4 +54,37 @@ function Recipe(name){
         }
         return ret;
     };
+
+    this.getRecipeTable = function(){
+        var table = document.createElement('TABLE');
+        var tableBody = document.createElement('TBODY');
+
+        table.border = '1';
+        table.appendChild(tableBody);
+
+        var heading = [];
+        heading[0] = "Name";
+        heading[1] = "Type";
+        heading[2] = "Quantity";
+        heading[3] = "Organic?";
+        heading[4] = "Unit of Measurement";
+        heading[5] = "Cost";
+
+
+        //TABLE COLUMNS
+        var tr1 = document.createElement('TR');
+        tableBody.appendChild(tr1);
+        for (i = 0; i < heading.length; i++) {
+            var th = document.createElement('TH');
+            th.width = '85';
+            th.appendChild(document.createTextNode(heading[i]));
+            tr1.appendChild(th);
+        }
+
+        //TABLE ROWS
+        for (var i = 0; i < this.Ingredients.length; i++) {
+            tableBody.appendChild(this.Ingredients[i].getIngredientTR());
+        }
+        return table;
+    }
 }
