@@ -53,3 +53,40 @@ function testIngredient(){
     var salt = new Ingredient('salt', IngredientTypes.Pantry, 0.34, false, 'teaspoons', 0.5);
     console.log(salt.toString());
 }
+function testUtil(){
+    var r = roundUpUtil(0.06, 0.07);
+    console.log("Output: " + r);
+
+    var r2 = roundUpUtil(0.22, 0.07);
+    console.log("Output: " + r2);
+}
+
+function getRecipe(){
+    var recipes = []
+    var r1 = new Recipe("R1");
+    r1.addIngredient(new Ingredient("Garlic", IngredientTypes.Produce, 1, true, "clove", 0.67));
+    r1.addIngredient(new Ingredient("Lemon", IngredientTypes.Produce,  1, false, "", 2.03));
+    r1.addIngredient(new Ingredient("Olive Oil", IngredientTypes.Pantry, 0.75, true,  "cup", 1.92));
+    r1.addIngredient(new Ingredient("Salt", IngredientTypes.Pantry, 0.75, false,  "teaspoon", 0.16));
+    r1.addIngredient(new Ingredient("pepper", IngredientTypes.Pantry, 0.5, false,  "teaspoon", 0.17));
+    recipes.push(r1);
+
+    var r2 = new Recipe("R2");
+    r2.addIngredient(new Ingredient("Garlic", IngredientTypes.Produce, 1, true,  "clove", 0.67));
+    r2.addIngredient(new Ingredient("Chicken Breast", IngredientTypes.Meat, 4, false,  "", 2.19));
+    r2.addIngredient(new Ingredient("Olive Oil", IngredientTypes.Pantry, 0.5, true,  "cup", 1.92));
+    r2.addIngredient(new Ingredient("Vinegar", IngredientTypes.Pantry, 0.5, false,  "cup", 1.26));
+    recipes.push(r2);
+
+    var r3 = new Recipe("R3");
+    r3.addIngredient(new Ingredient("Garlic",IngredientTypes.Produce, 1, true, "clove", 0.67));
+    r3.addIngredient(new Ingredient("Corn", IngredientTypes.Produce, 4, false, "cup", 0.87));
+    r3.addIngredient(new Ingredient("Bacon", IngredientTypes.Meat, 4, false, "slices", 0.24));
+    r3.addIngredient(new Ingredient("Pasta", IngredientTypes.Pantry, 8, false, "ounce", 0.31));
+    r3.addIngredient(new Ingredient("Olive Oil", IngredientTypes.Pantry, 0.3333, true, "cup", 1.92));
+    r3.addIngredient(new Ingredient("Salt", IngredientTypes.Pantry, 1.25, false, "teaspoon", 0.16));
+    r3.addIngredient(new Ingredient("pepper", IngredientTypes.Pantry, 0.75, false, "teaspoon", 0.17));
+    recipes.push(r3);
+
+    return recipes;
+}
